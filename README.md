@@ -1,14 +1,17 @@
-# Welcome to your CDK TypeScript project
+# AWS Cognito and Remix demo
 
-This is a blank project for CDK development with TypeScript.
+This demo project demonstrates how to log a user into a remix project using AWS apis.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## Getting Started
+Install CDK deps + the cdk project to spin up a new cognito pool and cogito client id. 
 
-## Useful commands
-
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `cdk deploy`      deploy this stack to your default AWS account/region
-* `cdk diff`        compare deployed stack with current state
-* `cdk synth`       emits the synthesized CloudFormation template
+1. Install any necessary dependencies in CDK project
+2. Run `cdk deploy CognitoRemixDemoStack` in your terminal -  will spin up a new cognito pool and cogito client id. 
+4. Fill out remix .env variables (see .env.example)
+3. After CDK deploy - grab userpool + client ids from outputs and paste into new remix .env file
+4. Install any necessary dependencies in remix project
+5. Run `yarn build`
+6. Run `yarn dev`
+7. Navigate to http://localhost:3000/ in your browser.
+8. In the AWS console, navigate to Cognito pool and add user. Choose to verify email at this time and to send email of temp password.
+9. Log in
